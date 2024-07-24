@@ -7,7 +7,7 @@ RSpec.describe "Articles" do
         it 'responds with status OK' do
             get '/api/v1/articles.json'
 
-            expect(response).to have_http_status(:accepted)
+            expect(response).to have_http_status(:ok)
         end
             it 'responds with correct persisted article json' do
                 get '/api/v1/articles.json'

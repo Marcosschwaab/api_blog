@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :articles, only: :index, constraints: lambda { |req| req.format == :json}
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  namespace :api do
+    namespace :v1 do
+     resources :articles, only: :index, constraints: lambda { |req| req.format == :json}
+    end
+  end# Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
 end
